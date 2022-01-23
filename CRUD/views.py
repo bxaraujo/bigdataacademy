@@ -12,23 +12,13 @@ from rest_framework.authentication import SessionAuthentication, BasicAuthentica
 from rest_framework.permissions import IsAdminUser, IsAuthenticated, AllowAny, IsAuthenticatedOrReadOnly
 
 # Models e Serializers
-from .models import Postagem, Servico, Equipe
-from .serializers import ServicoSerializer, PostagemSerializer, EquipeSerializer
+from .models import Postagem, Servico, IntegranteEquipe
+from .serializers import ServicoSerializer, PostagemSerializer, IntegranteEquipeSerializer
 
 
 
 # Create your views here.
-""" 
-@api_view(['GET'])
-@authentication_classes([BasicAuthentication])
-@permission_classes([IsAuthenticated])
-def example_view(request, format=None):
-    content = {
-        'user': str(request.user),  # `django.contrib.auth.User` instance.
-        'auth': str(request.auth),  # None
-    }
-    return Response(content)
- """
+
 @api_view(['GET'])
 @permission_classes((IsAuthenticatedOrReadOnly, ))
 def index(request): 
@@ -67,7 +57,7 @@ class ServicoDetails(generics.RetrieveUpdateDestroyAPIView):
     queryset = Servico.objects.all()
     serializer_class = ServicoSerializer
     authentication_classes = [SessionAuthentication]
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
 
 class PostagemList(generics.ListCreateAPIView):
@@ -77,26 +67,26 @@ class PostagemList(generics.ListCreateAPIView):
     queryset = Postagem.objects.all()
     serializer_class = PostagemSerializer
     authentication_classes = [SessionAuthentication]
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
 class PostagemDetails(generics.RetrieveUpdateDestroyAPIView):
     queryset = Postagem.objects.all()
     serializer_class = PostagemSerializer
     authentication_classes = [SessionAuthentication]
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
 
-class EquipeList(generics.ListCreateAPIView):
+class IntegranteEquipeList(generics.ListCreateAPIView):
 
     """ Este endpoint disponibiliza uma lista de integrantes das equipes de serviço"""
     
-    queryset = Equipe.objects.all()
-    serializer_class = EquipeSerializer
+    queryset = IntegranteEquipe.objects.all()
+    serializer_class = IntegranteEquipeSerializer
     authentication_classes = [SessionAuthentication]
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
-class EquipeDetails(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Equipe.objects.all()
-    serializer_class = EquipeSerializer
+class IntegranteEquipeDetails(generics.RetrieveUpdateDestroyAPIView):
+    queryset = IntegranteEquipe.objects.all()
+    serializer_class = IntegranteEquipeSerializer
     authentication_classes = [SessionAuthentication]
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticatedOrReadOnly, )

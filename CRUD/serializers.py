@@ -1,12 +1,12 @@
 from rest_framework import serializers
-from .models import Postagem, Servico, Equipe
+from .models import Postagem, Servico, IntegranteEquipe
 
 
 
-class EquipeSerializer(serializers.ModelSerializer):
+class IntegranteEquipeSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Equipe
+        model = IntegranteEquipe
         fields = '__all__'
 
     def to_representation(self, instance):
@@ -22,7 +22,7 @@ class PostagemSerializer(serializers.ModelSerializer):
 
     def to_representation(self, instance):
         rep = super().to_representation(instance)
-        rep['autor_postagem'] = EquipeSerializer(instance.autor_postagem).data['nome']
+        rep['autor_postagem'] = IntegranteEquipeSerializer(instance.autor_postagem).data['nome']
         return rep
 
 

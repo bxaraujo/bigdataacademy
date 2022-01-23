@@ -18,7 +18,7 @@ class Servico(models.Model):
         return self.servico
 
 
-class Equipe(models.Model):
+class IntegranteEquipe(models.Model):
 
     id = models.BigAutoField(db_column='id', primary_key=True, null=False, blank=False,)
     nome = models.CharField(db_column='nome', max_length=128, blank=False)
@@ -39,7 +39,7 @@ class Postagem(models.Model):
 
     id = models.BigAutoField(db_column='id', primary_key = True, null = False, blank=False,)
     data_criacao = models.DateTimeField(db_column='data_criacao', blank=True, null=False, default = datetime.now)
-    autor_postagem = models.ForeignKey(Equipe, related_name='autor_postagem', on_delete=models.DO_NOTHING)
+    autor_postagem = models.ForeignKey(IntegranteEquipe, related_name='autor_postagem', on_delete=models.DO_NOTHING)
     data_postagem = models.DateTimeField(db_column='data_postagem', blank=True, null=True)
     titulo = models.CharField(db_column='titulo', max_length=40, null=False, blank=False)
     texto = models.TextField(null=False, blank=False)
