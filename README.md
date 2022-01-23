@@ -41,14 +41,14 @@ Para documentar a API escolhi utilizar o drf_yasg, pacote muito útil que docume
 ```
 git clone https://github.com/bxaraujo/bigdataacademy.git
 ```
->Rodar o projeto localmente é impossível uma vez que se observa a inexistência de variáveis de ambiente que contêm informações sigilosas tais como as URI's de conexão com o Banco de Dados. Alternativas para testar a aplicação são descritas logo abaixo.
+> Não é possível rodar o projeto localmente, visto que foram omitidas do projeto as variáveis de ambiente que contêm informações sigilosas, tal como a SECRET_KEY utilizada para deploy em Produção. Alternativas para testar a aplicação são descritas logo abaixo.
 
 
 ## Utilização da solução
 
 O servidor Back-End está hospedado na Heroku, logo todas as suas rotas podem ser acessadas partindo do link:
 ```
-**https://cronos-rest-api.herokuapp.com/**
+https://cronos-rest-api.herokuapp.com
 ```
 ### Login e autenticação simples
 
