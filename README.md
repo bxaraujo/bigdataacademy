@@ -15,6 +15,7 @@ A proposta foi construir uma **API REST** para gerenciamento do conteúdo do sit
 * PostgreSQL
 * Heroku
 * drf_yasg
+* Gunicorn
 
 ### Python
 Optei por utilizar o python para realizar o desafio por ter mais experiência com esta linguagem
@@ -35,6 +36,9 @@ Banco de dados relacional, bastante robusto e confiável, utilizado para o ambie
 
 ### drf_yasg
 Para documentar a API escolhi utilizar o drf_yasg, pacote muito útil que documenta a REST API desenvolvida com o django rest framework nos formatos mais utilizados no mercado como OPENAPI e REDOC.
+
+### Gunicorn + Whitenoise
+A utilização do Gunicorn + Whitenoise como servidor web wsgi para servir a API python e para disponibilização dos arquivos estáticos utilizando a plataforma do heroku.
 
 
 ## Baixar o código-fonte do projeto
