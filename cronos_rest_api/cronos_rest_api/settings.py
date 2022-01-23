@@ -23,11 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'django-insecure-0ryxa1d!c)_tb#@07p35vtcspa=q12awoq-q&wjvy=al!kjed4'
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
+#print("teste", SECRET_KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-DEBUG = os.environ.get('DEBUG') == True
+DEBUG = True
+#DEBUG = os.environ.get('DEBUG') == True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://cronos-rest-api.herokuapp.com']
 
@@ -144,13 +145,16 @@ APPEND_SLASH = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 #STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+print("static", STATIC_ROOT)
+print("project", PROJECT_ROOT)
 
 #print("1", BASE_DIR)
 #print("2", PROJECT_ROOT)

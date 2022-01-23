@@ -5,7 +5,7 @@ from .views import *
 #app_name = 'cronos'
 urlpatterns = [
     #path('', url(r'^$', views.index, name='index')), 
-    #path('', index, name='index'), 
+    path('', index, name='index'), 
     path(r'servicos/', ServicoList.as_view(), name='Lista de Serviços'),
     path(r'servicos/<int:pk>', ServicoDetails.as_view(), name='Seleção do Serviço pelo id'),
 
