@@ -6,6 +6,13 @@ Para realizar este case técnico, optei por seguir o desafio do BACKEND, visto q
 
 ## Tecnologias utilizadas
 
+* Python
+* Django + Django Rest Framework
+* drf_yasg
+* QLite
+* PostgreSQL
+* Heroku
+
 ### Python
 
 Optei por utilizar o python para realizar o desafio por ter mais experiência com esta linguagem
@@ -22,7 +29,7 @@ Para documentar a API escolhi utilizar o drf_yasg, pacote muito útil que docume
 
 ### SQLite
 
-Banco de dados relacional utilizado para ambiente de desenvolvimento e também para o commit no GitHub, visto que sua estrutura simples em formato de arquivo é de fácil utilização.
+Banco de dados relacional utilizado para ambiente de desenvolvimento e também para o commit no GitHub, visto que sua estrutura simples em formato de arquivo é de fácil utilização e possível de rodar localmente.
 
 ### PostgreSQL
 
@@ -30,7 +37,7 @@ Banco de dados relacional, bastante robusto e confiável, utilizado para o ambie
 
 ### Heroku
 
-Decidi utilizar o heroku como ferramenta e SaaS para deploy da API em produção.
+Decidi utilizar o heroku como ferramenta e PaaS para deploy da API em produção.
 
 
 
@@ -41,6 +48,27 @@ Decidi utilizar o heroku como ferramenta e SaaS para deploy da API em produção
 pip install -r requirements.txt
 ```
 
+## Utilização
+
+### Login e autenticação simples
+
+Acessar a rota:
+```
+/admin/
+```
+Para administrar o conteúdo via painel de gerenciamento, utilizar o usuário **admin** e a senha **admin** . 
+Usuário: admin
+Senha: admin
+
+## Documentação OPENAPI, REDOC e SWAGGER
+
+/swagger/
+/swagger.json
+/swagger.yaml
+
+/swagger/?format=openapi
+
+http://127.0.0.1:9999/redoc/
 
 ## Rotas
 
@@ -48,17 +76,71 @@ O servidor Back-End está hospedado na Heroku, logo todas as suas rotas podem se
 https://employees-server.herokuapp.com/
 
 
-### Rotas GET
+### Rotas do CRUD de Serviços
+#### Rotas GET
+##### Obter lista de Serviços:
+```
+/servicos/
+```
+##### Obter lista de Integrantes da Equipe:
+```
+/equipe/
+```
+##### Obter lista de Posts:
+```
+/posts/
+```
 
-### Rotas GET
+#### Rotas POST
+##### Criar novo Serviço:
+```
+/servicos/
+```
+##### Criar novo Integrante da Equipe:
+```
+/equipe/
+```
+##### Criar novo Post:
+```
+/posts/
+```
 
-### Rotas GET
+#### Rotas PUT
+##### Atualizar serviço específico:
+```
+/servicos/:servicoId
+```
+Substitua :servicoId pelo Id do serviço que deseja atualizar e voilà!
 
-Deletar um cargo
+##### Obter lista de Integrantes da Equipe:
+```
+/equipe/:integranteId
+```
+Substitua :integranteId pelo Id do integrante da equipe que deseja atualizar e voilà!
 
-/cargos/delete/:cargoId
+##### Obter lista de Posts:
+```
+/posts/:postId
+```
+Substitua :postId pelo Id do post que deseja atualizar e voilà!
 
-Substitua :cargoId pelo Id do cargo que deseja deletar e voilà!
+#### Rotas DELETE
+##### Obter lista de Serviços:
+```
+/servicos/:servicoId
+```
+Substitua :servicoId pelo Id do serviço que deseja deletar e voilà!
+
+##### Obter lista de Integrantes da Equipe:
+```
+/equipe/:integranteId
+```
+Substitua :integranteId pelo Id do integrante da equipe que deseja deletar e voilà!
+##### Obter lista de Posts:
+```
+/posts/:postId
+```
+Substitua :postId pelo Id do post que deseja deletar e voilà!
 
 
 
