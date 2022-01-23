@@ -34,8 +34,31 @@ Decidi utilizar o heroku como ferramenta e SaaS para deploy da API em produção
 
 
 
+## Setup do ambiente de teste e desenvolvimento
+
+### Instalar requirements em ambiente que utilize 
+```
+pip install -r requirements.txt
+```
 
 
+## Rotas
+
+O servidor Back-End está hospedado na Heroku, logo todas as suas rotas podem ser acessadas partindo do link:
+https://employees-server.herokuapp.com/
+
+
+### Rotas GET
+
+### Rotas GET
+
+### Rotas GET
+
+Deletar um cargo
+
+/cargos/delete/:cargoId
+
+Substitua :cargoId pelo Id do cargo que deseja deletar e voilà!
 
 
 
