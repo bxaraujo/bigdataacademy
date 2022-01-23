@@ -22,12 +22,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'django-insecure-0ryxa1d!c)_tb#@07p35vtcspa=q12awoq-q&wjvy=al!kjed4'
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 #DEBUG = os.environ.get('DEBUG') == True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://cronos-rest-api.herokuapp.com']
@@ -58,13 +57,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-""" 
+ 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
         'rest_framework.renderers.JSONRenderer',
     )
 }   
- """
+ 
 
 
 ROOT_URLCONF = 'cronos_rest_api.urls'

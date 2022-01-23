@@ -1,7 +1,7 @@
 # Desafio Deloitte + Big Data Academy 
 ## DELOITTE BIG DATA - CASE TÉCNICO
-![alt text](https://github.com/bxaraujo/bigdataacademy/blob/8a374ddc570ad408dcf0a3ce3a1be33fdd7b09be/miscellaneous/bigdataacademy.png "Big Data Academy 1")
-![alt text](https://github.com/bxaraujo/bigdataacademy/blob/8a374ddc570ad408dcf0a3ce3a1be33fdd7b09be/miscellaneous/logo-Deloitte.svg "Big Data Academy 1")
+![alt text](https://github.com/bxaraujo/bigdataacademy/blob/e80064f9bd924f7040131d796f839fb8c04bd02b/miscellaneous/logo-gama.svg "Game Academy 1")
+![alt text](https://github.com/bxaraujo/bigdataacademy/blob/8a374ddc570ad408dcf0a3ce3a1be33fdd7b09be/miscellaneous/logo-Deloitte.svg "Deloitte 1")
 
 
 

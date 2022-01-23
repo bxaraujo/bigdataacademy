@@ -16,37 +16,18 @@ from .models import Postagem, Servico, IntegranteEquipe
 from .serializers import ServicoSerializer, PostagemSerializer, IntegranteEquipeSerializer
 
 
-
-# Create your views here.
-
 @api_view(['GET'])
 @permission_classes((IsAuthenticatedOrReadOnly, ))
 def index(request): 
         return HttpResponse("""       
-        <h1> Bem-vindo!</h1>
-        <h2>Olá, seja bem-vindo a API para gerenciamento do conteúdo do site institucional.</h2>
-        <h2>Faça o login em /admin para se autenticar</h2>
-        <h3>
-            <p>
-                <br>Endpoints disponíveis:
-                    <br>Painel Administrativo: /admin/</br>
-                    Listar todos os serviços: /servicos/
-                    <br>Listar apenas um serviço pelo id: /servicos-detalhe/id</br>
-                    Listar todos os Integrantes da empresa: /equipe/
-                    <br>Listar Integrante específico pelo id: /equipe-detalhe/id</br>
-                    Listar todos os Posts: /posts/
-                    <br>Listar Post específico: /posts-detalhe/id</br>
-            </p>
-        </h3>""")
+        <h1> Bem-vindo a Cronos API!</h1>
+        <h2>Olá, seja bem-vindo a API para gerenciamento do conteúdo do site institucional da Cronos.</h2>
+        <h2> Instruções de utilização e Lista de Endpoints disponíveis: <a href="https://github.com/bxaraujo/bigdataacademy#readme"> GitHub - README.md</a> </h2>""")
 
-"""
-@api_view(['GET', 'POST'])
-@swagger_auto_schema(method='POST', request_body = Serializer) """
+
 
 class ServicoList(generics.ListCreateAPIView):
-
-    """ Este endpoint disponibiliza uma lista dos serviços oferecidos pela Agência Cronos"""
-
+    """ Este endpoint interage sobre os dos serviços oferecidos pela Agência Cronos"""
     queryset = Servico.objects.all()
     serializer_class = ServicoSerializer
     authentication_classes = [SessionAuthentication]
@@ -54,6 +35,7 @@ class ServicoList(generics.ListCreateAPIView):
 
 
 class ServicoDetails(generics.RetrieveUpdateDestroyAPIView):
+    """ Este endpoint interage sobre os dos serviços oferecidos pela Agência Cronos"""
     queryset = Servico.objects.all()
     serializer_class = ServicoSerializer
     authentication_classes = [SessionAuthentication]
@@ -61,15 +43,14 @@ class ServicoDetails(generics.RetrieveUpdateDestroyAPIView):
 
 
 class PostagemList(generics.ListCreateAPIView):
-
-    """ Este endpoint disponibiliza uma lista das postagens realizadas pelo autor que faz parte de uma das equipes de serviço"""
-
+    """ Este endpoint interage sobre os Posts escritos pelos integrantes da Agência Cronos"""
     queryset = Postagem.objects.all()
     serializer_class = PostagemSerializer
     authentication_classes = [SessionAuthentication]
     permission_classes = (IsAuthenticatedOrReadOnly, )
 
 class PostagemDetails(generics.RetrieveUpdateDestroyAPIView):
+    """ Este endpoint interage sobre os Posts escritos pelos integrantes da Agência Cronos"""
     queryset = Postagem.objects.all()
     serializer_class = PostagemSerializer
     authentication_classes = [SessionAuthentication]
@@ -77,15 +58,14 @@ class PostagemDetails(generics.RetrieveUpdateDestroyAPIView):
 
 
 class IntegranteEquipeList(generics.ListCreateAPIView):
-
-    """ Este endpoint disponibiliza uma lista de integrantes das equipes de serviço"""
-    
+    """ Este endpoint interage sobre os Integrantes das Equipes da Agência Cronos"""
     queryset = IntegranteEquipe.objects.all()
     serializer_class = IntegranteEquipeSerializer
     authentication_classes = [SessionAuthentication]
     permission_classes = (IsAuthenticatedOrReadOnly, )
 
 class IntegranteEquipeDetails(generics.RetrieveUpdateDestroyAPIView):
+    """ Este endpoint interage sobre os Integrantes das Equipes da Agência Cronos"""
     queryset = IntegranteEquipe.objects.all()
     serializer_class = IntegranteEquipeSerializer
     authentication_classes = [SessionAuthentication]
