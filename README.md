@@ -1,2 +1,18 @@
 # bigdataacademy
-Teste construção backend
+
+
+
+
+# Django
+
+# Django Rest Framework
+
+# SQLite
+
+# 
+
+
+
+
+
+
