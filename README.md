@@ -2,9 +2,6 @@
 ## BIG DATA ACADEMY - CASE TÉCNICO
 ![alt text](https://github.com/bxaraujo/bigdataacademy/blob/e80064f9bd924f7040131d796f839fb8c04bd02b/miscellaneous/logo-gama.svg "Gama Academy 1")
 
-
-
-
 Desafio técnico proposto pela Gama Academy em parceria om a deloitte. 
 Para realizar este case técnico, optei por seguir o desafio do BACKEND, visto que tenho mais conhecimento e prática nesta área.
 A proposta foi construir uma API REST para gerenciamento do conteúdo do site institucional de um cliente fictício chamado Cronos.
@@ -47,11 +44,12 @@ git clone https://github.com/bxaraujo/bigdataacademy.git
 >Rodar o projeto localmente é impossível uma vez que se observa a inexistência de variáveis de ambiente que contêm informações sigilosas tais como as URI's de conexão com o Banco de Dados. Alternativas para testar a aplicação são descritas logo abaixo.
 
 
-## Utilização
+## Utilização da solução
 
 O servidor Back-End está hospedado na Heroku, logo todas as suas rotas podem ser acessadas partindo do link:
-https://cronos-rest-api.herokuapp.com/
-
+```
+**https://cronos-rest-api.herokuapp.com/**
+```
 ### Login e autenticação simples
 
 Acessar a rota:
