@@ -2,9 +2,9 @@
 ## BIG DATA ACADEMY - CASE TÉCNICO
 ![alt text](https://github.com/bxaraujo/bigdataacademy/blob/e80064f9bd924f7040131d796f839fb8c04bd02b/miscellaneous/logo-gama.svg "Gama Academy 1")
 
-Desafio técnico proposto pela Gama Academy em parceria om a deloitte. 
-Para realizar este case técnico, optei por seguir o desafio do BACKEND, visto que tenho mais conhecimento e prática nesta área.
-A proposta foi construir uma API REST para gerenciamento do conteúdo do site institucional de um cliente fictício chamado Cronos.
+Desafio técnico proposto pela Gama Academy em parceria com a Deloitte. 
+Para realizar este case, optei por seguir o desafio do **backend**, visto que tenho mais conhecimento e prática nesta área.
+A proposta foi construir uma **API REST** para gerenciamento do conteúdo do site institucional de um cliente fictício chamado Cronos utilizando um **CRUD**.
 
 
 ## Tecnologias utilizadas
@@ -51,8 +51,9 @@ O servidor Back-End está hospedado na Heroku, logo todas as suas rotas podem se
 https://cronos-rest-api.herokuapp.com
 ```
 ### Login e autenticação simples
+_É possível acessar o método **GET** dos endpoints sem realizar o Login, porém não será possível realizar **POST**, **PUT** ou **DELETE** nos endpoints. Para isso é necessário o usuário se autenticar realizando o Login._
 
-Acessar a rota:
+Acessar a rota abaixo para se autenticar:
 ```
 /admin/
 ```
